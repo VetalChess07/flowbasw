@@ -1,0 +1,148 @@
+@font-face {
+   font-family: 'Koulen';
+   src: url(../fonts/Koulen-Regular.ttf);
+}
+@font-face {
+   font-family: 'GeneralSans';
+   src: url(../fonts/GeneralSans-Medium.otf);
+}
+
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+
+}
+
+::-webkit-scrollbar {
+   width: 15px;
+}
+
+::-webkit-scrollbar-track {
+   background: #222222;
+
+
+}
+
+::-webkit-scrollbar-thumb {
+   background: #2194FF;
+   border: 3px solid #222;
+}
+
+::-webkit-scrollbar-thumb:hover {
+   background: #F1F1F1;;
+}
+
+/* Убираем внутренние отступы */
+ul,
+ol[class],
+li {
+   padding: 0;
+   list-style: none;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+   margin: 0;
+}
+
+a {
+   text-decoration: none;
+   cursor: pointer;
+   color: #000000;
+   transition: all 0.3s;
+}
+a:hover {
+   color: $crayola;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-family: 'Koulen';
+}
+
+p {
+font-family: 'GeneralSans';
+   font-style: normal;
+font-weight: 300;
+font-size: 16px;
+line-height: 22px;
+
+}
+
+h1{
+   font-style: normal;
+   font-weight: 400;
+   font-size: 96px;
+   line-height: 90%;
+   letter-spacing: -0.02em;
+   color: $black;
+}
+h2{}
+h3{
+font-family: 'Koulen';
+font-style: normal;
+font-weight: 400;
+font-size: 40px;
+line-height: 42px;
+letter-spacing: -0.02em;
+color: #000000;
+}
+button{
+   border: none;
+}
+
+body {
+   font-family: 'GeneralSans';
+   overflow-x: hidden;
+   max-width:1280px ;
+   width: 100%;
+   margin: 0 auto;  
+   position: relative;
+   box-sizing: border-box;
+}
+body.noscroll{
+ overflow: hidden;
+ height: 100%;
+}
+html{
+   box-sizing: border-box;
+ 
+}
+
+.wrap {
+   margin: 0 auto;
+   padding: 0 10px;
+   width: 100%;
+   max-width:1280px ;
+
+
+}
+
+.section {
+   margin: 0 auto;
+   padding: 0 10px;
+   width: 100%;
+
+   max-width:1280px ;
+
+}

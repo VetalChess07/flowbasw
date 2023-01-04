@@ -1,0 +1,124 @@
+@media (max-width:1070px) { 
+   .hero__new--block{
+      right: 10px;
+      top: 10%;
+   }
+}
+@media (max-width:980px) {  
+   .header__link{
+      line-height: normal;
+      font-size: 12px;
+   }
+   .header__btn {
+      width: 100px;
+      padding: 5px 10px;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: normal;
+      &::before{
+         left: 12px;
+    top: 6px;
+      }
+  }
+   .header__item-nav{
+   display: none;
+  }
+  .burger__content.open{
+   transition: all 0.3s;
+   display: flex;
+   
+   height: 100vh;
+   flex-direction: column;
+   position: absolute;
+   width: 50%;
+   left: 0;
+   top: 0;
+   padding: 10px;
+   background-color: $opal;
+   max-width: 800px;
+   
+}
+.burger__content--close.open{
+   display: block;
+   width: 50%;
+   right: 0;
+   top: 0;
+   position: absolute;
+   background-color: $sunny;
+   opacity: 0.5;
+   height: 100vh;
+}
+
+.burger__content--item{
+   padding: 10px 0;
+   margin: 0;
+}
+.header__btn-adaptiv{
+   margin: 0;
+}
+  .burger__btn{
+   width: 15px;
+   height: 15px;
+  z-index: 2;
+   position: absolute;
+   right: 10px;
+   top: 10px;
+   transition: all 3s;
+   .burger__line-first{
+position: absolute;
+top: 0;
+width: 100%;
+transition: all 0.3s;
+border: 1px solid transparent;
+background-color: $black;
+   }
+   .burger__line-center{
+      top: 6px;
+      transition: all 0.3s;
+
+      width: 100%;
+      position: absolute;
+      border: 1px solid transparent;
+      background-color: $black;
+
+   }
+   .burger__line-last{
+      transition: all 0.3s;
+      bottom: 0;
+width: 100%;
+position: absolute;  
+border: 1px solid transparent;
+background-color: $black;
+
+}
+
+}
+.burger__line-first.open{
+   transform: rotate(-45deg);
+   top: 6px;
+   width: 100%;
+      }
+      .burger__line-center.open{
+       display: none;
+      }
+      .burger__line-last.open{
+         bottom: 7px;
+         transform: rotate(45deg);
+   }
+}
+@media (max-width:840px){
+   .hero__btn {
+      flex-direction: column;
+      right: 5px;
+   }
+   .hero__btn--inner:last-child {
+   margin: 0;
+}
+.hero__btn--inner{
+   margin: 20px 0;
+}
+
+  
+}
+
+
