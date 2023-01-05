@@ -117,8 +117,57 @@ background-color: $black;
 .hero__btn--inner{
    margin: 20px 0;
 }
+.intro__item--img {
 
-  
+flex-wrap: wrap;
+.intro__img{
+padding: 20px 20px;
 }
-
-
+}
+}
+@media (max-width:760px){
+   .hero__item--img {
+      height: 100%;
+      padding: 10px;
+    .hero__card{
+      max-width: 260px;
+      height: 390px;
+      justify-content: space-around;
+    }
+    .hero__btn {
+      position: static;
+    }
+    .hero__card--link-img {
+      bottom: 25px;
+      right: 25px;
+  }
+ 
+    
+   }
+   h3{
+      font-size: 23px;
+      line-height: normal;
+   }
+ }
+@media (max-width:580px){
+  h1{
+   font-size: 70px;
+   margin-bottom: 20px;
+  } 
+  .intro {
+ 
+   margin: 34px 0 0 0;
+   padding: 34px 0 16px 0;
+}
+.hero__new--block {
+   right: -7px;
+   top: -41px;
+   width: 100px;
+height: 100px;}
+}
+@media (max-width:480px){
+   h1{
+    font-size: 40px;
+   } 
+ }
+ 

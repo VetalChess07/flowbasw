@@ -1,11 +1,12 @@
 .header {
    width: 100%;
-   max-width: 1280px;
+   
    position: fixed;
      padding: 10px 10px;
      z-index: 10;
      background-color: $white;
    top: 0;
+
 &__inner {
    display: flex;
    justify-content: space-between;

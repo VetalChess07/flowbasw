@@ -31,4 +31,25 @@ burgerContentClose.addEventListener('click',(e) => {
    burgerContent.classList.toggle("open"); 
    burgerContentClose.classList.toggle("open"); 
    body.classList.toggle("noscroll"); 
+});
+
+const buttons = [...document.querySelectorAll('.chat__btn')];
+const chat__svg = [...document.querySelectorAll('.icon__chat-svg')];
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    document.querySelector('.chat__btn.active').classList.remove('active');
+    
+    button.classList.add('active');
+   
+  })
 })
+chat__svg.forEach(svg => {
+  svg.addEventListener('click', () => {
+     document.querySelector('.chat__btn.active').classList.remove('active');
+     
+     svg.classList.add('active');
+  
+   })
+ }) 
+
+

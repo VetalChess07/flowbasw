@@ -90,12 +90,14 @@ line-height: 22px;
 }
 
 h1{
+   
    font-style: normal;
    font-weight: 400;
    font-size: 96px;
    line-height: 90%;
    letter-spacing: -0.02em;
    color: $black;
+   padding: 0 10px 0 0;
 }
 h2{}
 h3{
@@ -114,7 +116,6 @@ button{
 body {
    font-family: 'GeneralSans';
    overflow-x: hidden;
-   max-width:1280px ;
    width: 100%;
    margin: 0 auto;  
    position: relative;
@@ -126,12 +127,17 @@ body.noscroll{
 }
 html{
    box-sizing: border-box;
+   width: 100%;
+   margin: 0;
+   padding: 0;
+
+   
  
 }
 
 .wrap {
    margin: 0 auto;
-   padding: 0 10px;
+  
    width: 100%;
    max-width:1280px ;
 
@@ -143,6 +149,6 @@ html{
    padding: 0 10px;
    width: 100%;
 
-   max-width:1280px ;
+ 
 
 }
