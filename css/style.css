@@ -29,16 +29,19 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #222222;
+  background: #EEF1EC;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2194FF;
-  border: 3px solid #222;
+  background: #FB554C;
+  border: 3px solid #EEF1EC;
+  border-radius: 10px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #F1F1F1;
+  background: #8DBAB5;
 }
 
 /* Убираем внутренние отступы */
@@ -47,6 +50,10 @@ ol[class],
 li {
   padding: 0;
   list-style: none;
+}
+
+input {
+  outline: none;
 }
 
 /* Убираем внешние отступы */
@@ -135,6 +142,8 @@ body {
 body.noscroll {
   overflow: hidden;
   height: 100%;
+  z-index: 100;
+  width: 100vw;
 }
 
 html {
@@ -143,7 +152,6 @@ html {
   width: 100%;
   margin: 0;
   padding: 0;
-   overflow-x: hidden;
 }
 
 .wrap {
@@ -158,6 +166,35 @@ html {
   width: 100%;
 }
 
+@-webkit-keyframes a {
+  0% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  50% {
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@keyframes a {
+  0% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  50% {
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
 .header {
   width: 100%;
   position: fixed;
@@ -671,9 +708,8 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  overflow: auto;
-  scrollbar-width: none;
-  height: 500px;
+  overflow-y: scroll;
+  height: 400px;
 }
 .chat .chat__messenger .chat__messenger::-webkit-scrollbar {
   display: none;
@@ -692,6 +728,48 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transform: translateX(-150%);
+          transform: translateX(-150%);
+}
+.chat .chat__messenger--item:nth-child(1) {
+  -webkit-animation: ani 0.7s ease-in-out forwards;
+          animation: ani 0.7s ease-in-out forwards;
+}
+.chat .chat__messenger--item:nth-child(2) {
+  -webkit-animation: ani 0.7s forwards 3s;
+          animation: ani 0.7s forwards 3s;
+}
+.chat .chat__messenger--item:nth-child(3) {
+  -webkit-animation: ani 0.7s forwards 5s;
+          animation: ani 0.7s forwards 5s;
+}
+.chat .chat__messenger--item:nth-child(4) {
+  -webkit-animation: ani 0.7s forwards 7s;
+          animation: ani 0.7s forwards 7s;
+}
+.chat .chat__messenger--item:nth-child(5) {
+  -webkit-animation: ani 0.7s forwards 9s;
+          animation: ani 0.7s forwards 9s;
+}
+@-webkit-keyframes ani {
+  0% {
+    -webkit-transform: translateX(-150%);
+            transform: translateX(-150%);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes ani {
+  0% {
+    -webkit-transform: translateX(-150%);
+            transform: translateX(-150%);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
 }
 .chat .chat__messenger--item .avatar__user {
   max-width: 10%;
@@ -707,6 +785,82 @@ html {
       -ms-flex-direction: column;
           flex-direction: column;
 }
+.chat .chat__dialog {
+  width: 100%;
+  background: #F5F4F3;
+  border-radius: 99px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 16px;
+}
+.chat .chat__smile--btn {
+  width: 13px;
+  height: 13px;
+  margin-right: 17px;
+}
+.chat .chat__input {
+  width: 100%;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #4E4F51;
+  border: none;
+  outline: none;
+  background: none;
+  resize: none;
+}
+.chat .chat__submit--btn {
+  width: 44px;
+  height: 32px;
+  left: 296px;
+  top: 8px;
+  background: #000000;
+  border-radius: 99px;
+}
+.chat__messenger--item--user {
+  display: none;
+}
+
+.chat__messenger--item--user.active {
+  -webkit-animation: ani 0.7s linear;
+          animation: ani 0.7s linear;
+  padding: 20px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "GeneralSans";
+}
+.chat__messenger--item--user.active .user__content {
+  width: 90%;
+  padding: 0 0 0 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.chat__messenger--item--user.active .user__name {
+  font-size: 20px;
+  color: #FB554C;
+}
+.chat__messenger--item--user.active .user__text {
+  font-size: 16px;
+  color: #4E4F51;
+}
+
 @media (max-width: 1070px) {
   .hero__new--block {
     right: 10px;
@@ -714,6 +868,9 @@ html {
   }
 }
 @media (max-width: 980px) {
+  .header {
+    padding: 10px 10px 10px 10px;
+  }
   .header__link {
     line-height: normal;
     font-size: 12px;
@@ -738,18 +895,20 @@ html {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    overflow: hidden;
     height: 100vh;
+    width: 100%;
+    position: fixed;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    position: absolute;
+    z-index: 100;
     width: 50%;
     left: 0;
     top: 0;
     padding: 10px;
     background-color: #8DBAB5;
-    max-width: 800px;
   }
   .burger__content--close.open {
     display: block;
@@ -757,9 +916,13 @@ html {
     right: 0;
     top: 0;
     position: absolute;
+    overflow: hidden;
+    height: 100vh;
+    position: fixed;
     background-color: #FFD6AD;
     opacity: 0.5;
     height: 100vh;
+    z-index: 100;
   }
   .burger__content--item {
     padding: 10px 0;
@@ -786,6 +949,7 @@ html {
     transition: all 0.3s;
     border: 1px solid transparent;
     background-color: #000;
+    z-index: 100;
   }
   .burger__btn .burger__line-center {
     top: 6px;

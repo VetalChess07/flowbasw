@@ -7,6 +7,8 @@ let burgerLineCenter = document.querySelector(".burger__line-center");
 let burgerLineLast = document.querySelector(".burger__line-last");
 let burgerContent = document.querySelector(".burger__content");
 let body = document.body;
+
+
 let burgerContentClose = document.querySelector(".burger__content--close");
 
 
@@ -50,6 +52,31 @@ chat__svg.forEach(svg => {
      svg.classList.add('active');
   
    })
- }) 
+ });
+  
+ 
+
+ let chat = document.querySelector('.chat__interactive');
+
+ 
+
+let newUserChat = document.querySelector('.chat__messenger--item--user');
+// console.log(newUserChat)
+function handleButtonClick() {
+ newUserChat.scrollIntoView({block: "center", behavior: "smooth"});
+}
+
+
+let chatPushBtn =  document.querySelector('.chat__submit--btn').addEventListener('click', myClick);
+  function myClick() {
+    console.log('fff');
+    let chatInput = document.querySelector('.chat__input').value;
+    document.querySelector(".out__input--user").innerHTML = chatInput;
+    document.querySelector('.chat__input').value = "";
+    newUserChat.classList.add("active");
+    scrollchat();
+    handleButtonClick();
+  };
+
 
 

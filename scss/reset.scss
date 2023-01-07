@@ -19,18 +19,20 @@
 }
 
 ::-webkit-scrollbar-track {
-   background: #222222;
+   background: $sage;
 
 
 }
 
 ::-webkit-scrollbar-thumb {
-   background: #2194FF;
-   border: 3px solid #222;
+   background: $crayola;
+   border: 3px solid $sage;
+   border-radius: 10px;
+   transition: all 0.3s;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-   background: #F1F1F1;;
+   background: $opal;
 }
 
 /* Убираем внутренние отступы */
@@ -39,6 +41,9 @@ ol[class],
 li {
    padding: 0;
    list-style: none;
+}
+input{
+   outline: none;
 }
 
 /* Убираем внешние отступы */
@@ -124,22 +129,26 @@ body {
 body.noscroll{
  overflow: hidden;
  height: 100%;
+ z-index: 100;
+width: 100vw;
+
 }
 html{
    box-sizing: border-box;
    width: 100%;
    margin: 0;
    padding: 0;
- overflow-x: hidden;
    
- 
 }
+
+
 
 .wrap {
    margin: 0 auto;
   
    width: 100%;
    max-width:1280px ;
+  
 
 
 }
