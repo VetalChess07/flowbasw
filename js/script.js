@@ -54,17 +54,14 @@ chat__svg.forEach(svg => {
    })
  });
   
- 
 
- let chat = document.querySelector('.chat__interactive');
 
  
 
 let newUserChat = document.querySelector('.chat__messenger--item--user');
-// console.log(newUserChat)
 function handleButtonClick() {
  newUserChat.scrollIntoView({block: "center", behavior: "smooth"});
-}
+};
 
 
 let chatPushBtn =  document.querySelector('.chat__submit--btn').addEventListener('click', myClick);
@@ -74,9 +71,11 @@ let chatPushBtn =  document.querySelector('.chat__submit--btn').addEventListener
     document.querySelector(".out__input--user").innerHTML = chatInput;
     document.querySelector('.chat__input').value = "";
     newUserChat.classList.add("active");
-    scrollchat();
+    // scrollchat();
     handleButtonClick();
   };
+
+
 
 
 
