@@ -132,6 +132,9 @@ body.noscroll{
  z-index: 100;
 width: 100vw;
 
+  scroll-behavior: smooth;
+
+
 }
 html{
    box-sizing: border-box;

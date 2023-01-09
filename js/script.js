@@ -34,14 +34,17 @@ burgerContentClose.addEventListener('click',(e) => {
    burgerContentClose.classList.toggle("open"); 
    body.classList.toggle("noscroll"); 
 });
+// let tabsBtn = document.querySelectorAll("chat__tab")
+
 
 const buttons = [...document.querySelectorAll('.chat__btn')];
 const chat__svg = [...document.querySelectorAll('.icon__chat-svg')];
 buttons.forEach(button => {
   button.addEventListener('click', () => {
-    document.querySelector('.chat__btn.active').classList.remove('active');
-    
+  document.querySelector('.chat__btn.active').classList.remove('active');
+   
     button.classList.add('active');
+    
    
   })
 })
@@ -53,28 +56,65 @@ chat__svg.forEach(svg => {
   
    })
  });
-  
 
+ let liveChatBtn = document.getElementById("chat__btn--live-chat");
+ let attendeesChatBtn = document.getElementById("chat__btn--attendees");
+ console.log(liveChatBtn);
+ console.log(attendeesChatBtn);
+
+
+let chatAttendees = document.querySelector('.attendees');
+console.log(chatAttendees);
+
+ let chat = document.querySelector('.chat__messenger');
+ console.log(chat);
+
+liveChatBtn.addEventListener("click", () =>{
+  chatAttendees.classList.remove('active');
+  chat.classList.add('active');
+  chat.classList.remove('noactive');
+})
+attendeesChatBtn.addEventListener("click", () =>{
+  chatAttendees.classList.add('active');
+  chat.classList.remove('active');
+  chat.classList.add('noactive');
+})
 
  
-
 let newUserChat = document.querySelector('.chat__messenger--item--user');
-function handleButtonClick() {
- newUserChat.scrollIntoView({block: "center", behavior: "smooth"});
-};
 
+let userChat = document.querySelector('.chat__messenger--item');
+
+
+
+function handleElementClickUser() {
+ newUserChat.scrollIntoView( { block: "center", behavior: "smooth"});
+
+};
+function chatScroll() {
+chat.scrollIntoView( { block: "center", behavior: "smooth"});
+ chat.scrollTop = chat.scrollHeight;
+
+ };
+chatScroll();
 
 let chatPushBtn =  document.querySelector('.chat__submit--btn').addEventListener('click', myClick);
   function myClick() {
     console.log('fff');
+  
     let chatInput = document.querySelector('.chat__input').value;
     document.querySelector(".out__input--user").innerHTML = chatInput;
     document.querySelector('.chat__input').value = "";
-    newUserChat.classList.add("active");
-    // scrollchat();
-    handleButtonClick();
-  };
 
+    newUserChat.classList.add("active");   
+    handleElementClickUser(); 
+     chatDownload = document.querySelector('.chat__messenger--item.chat__download').classList.add('active');
+    //  chatDownload.scrollTop = chatDownload.scrollHeight;
+    chatScroll();
+    };
+   
+
+ 
 
 
 

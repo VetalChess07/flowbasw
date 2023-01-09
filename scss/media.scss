@@ -1,3 +1,29 @@
+@media (max-width:1180px) {  
+   .chat{
+      .chat__video--block{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+      .chat__video--img{
+         height: 100%;
+      }
+   }
+   &__interactive {
+      .chat__interactive--menu {
+         justify-content: space-around;
+      }
+   max-width: 100%;
+   padding: 10px ;
+   }
+   .chat__item--chat {
+      flex-direction: column;
+     
+   }
+   }
+   
+  }
 @media (max-width:1070px) { 
    .hero__new--block{
       right: 10px;
