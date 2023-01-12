@@ -69,10 +69,9 @@
 
 }
 .burger__content--close.open{
-   display: block;
+ 
    width: 50%;
    right: 0;
-   top: 0;
    position: absolute;  overflow: hidden;
    height: 100vh;
    position: fixed;
@@ -141,7 +140,10 @@ background-color: $black;
          bottom: 7px;
          transform: rotate(45deg);
    }
+  
+  
 }
+
 @media (max-width:840px){
    .hero__btn {
       flex-direction: column;
@@ -184,8 +186,13 @@ padding: 20px 20px;
       font-size: 23px;
       line-height: normal;
    }
+   .chat__item--chat {
+      
+    padding: 5px; 
+  }
  }
 @media (max-width:580px){
+   
   h1{
    font-size: 70px;
    margin-bottom: 20px;
@@ -200,7 +207,22 @@ padding: 20px 20px;
    top: -41px;
    width: 100px;
 height: 100px;}
+.chat{
+   .chat__btn{
+      margin: 5px ;
+     
+   }
+   .chat__btn-gear{
+      padding: 5px;
+   }
+  .chat__dialog {
+   font-size: 8px;
+  } 
 }
+
+}
+
+
 @media (max-width:480px){
    h1{
     font-size: 40px;

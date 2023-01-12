@@ -103,5 +103,8 @@ position: relative;
 transition: all ease 0.3s;
 }
 .burger__content--close{
-   display: none;
+  top: 0;
+   position: absolute;
+   right: -200%;
+   transition: all ease 0.3s;
 }
