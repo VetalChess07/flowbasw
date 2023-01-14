@@ -118,76 +118,77 @@ function myClick() {
   myClick.isRun = true;
 
 };
+  const btnOff = document.querySelector('.open-popup');
+         // btnOn = document.querySelector('.popup'),
+         body = document.body;
 
+      let disableScroll = function () {
+         let pagePosition = window.scrollY;
+         document.body.classList.add('active');
+         document.body.dataset.position = pagePosition;
+         document.body.style.top = -pagePosition + 'px';
+      }
 
-const btnOff = document.querySelector('attendees__item');
-//   btnOn = document.querySelector('.popup'),
- 
+      let enableScroll = function () {
+         let pagePosition = parseInt(document.body.dataset.position, 10);
+         document.body.style.top = 'auto';
+         document.body.classList.remove('active');
+         window.scroll({ top: pagePosition, left: 0 });
+         document.body.removeAttribute('active');
+      }
 
-let disableScroll = function () {
-  let pagePosition = window.scrollY;
-  document.body.classList.add('active');
-  document.body.dataset.position = pagePosition;
-  document.body.style.top = -pagePosition + 'px';
-}
+      // btnOff.addEventListener('click', (e) => {
+      //    disableScroll();
+      //    e.currentTarget.style.pointerEvents = 'none';
+      //    btnOn.style.pointerEvents = 'auto';
+      // });
 
-let enableScroll = function () {
-  let pagePosition = parseInt(document.body.dataset.position, 10);
-  document.body.style.top = 'auto';
-  document.body.classList.remove('active');
-  window.scroll({ top: pagePosition, left: 0 });
-  document.body.removeAttribute('active');
-}
+      // btnOn.addEventListener('click', (e) => {
+      //    enableScroll();
+      //    e.currentTarget.style.pointerEvents = 'none';
+      //    btnOff.style.pointerEvents = 'auto';
+      // });
 
+      let popupBg = document.querySelector('.popup__attendees-bg'); // Фон попап окна
+      let popup = document.querySelector('.popup__attendees'); // Само окно
+      let openPopupButtons = document.querySelectorAll('.attendees__item'); // Кнопки для показа окна
+      let closePopupButton = document.querySelector('.close-popup');
 
-
-let popupBg = document.querySelector('.popup__bg'); // Фон попап окна
-let popup = document.querySelector('.popup'); // Само окно
-let openPopupButtons = document.querySelectorAll('attendees__item'); // Кнопки для показа окна
-// let closePopupButton = document.querySelector('.close-popup');
-
-console.log(body);
-
-
-
-
-openPopupButtons.forEach((button) => { // Перебираем все кнопки
-  button.addEventListener('click', (e) => { // Для каждой вешаем обработчик событий на клик
-    e.preventDefault(); // Предотвращаем дефолтное поведение браузера
-    popupBg.classList.add('active'); // Добавляем класс 'active' для фона
-    popup.classList.add('active'); // И для самого окна
-    body.classList.add('active')
-  })
-});
-
-// closePopupButton.addEventListener('click', () => { // Вешаем обработчик на крестик
-//   popupBg.classList.remove('active'); // Убираем активный класс с фона
-//   popup.classList.remove('active'); // И с окна
-//   body.classList.remove('active');
-// });
-
-document.addEventListener('click', (e) => { // Вешаем обработчик на весь документ
-  if (e.target === popupBg) { // Если цель клика - фот, то:
-    popupBg.classList.remove('active'); // Убираем активный класс с фона
-    popup.classList.remove('active'); // И с окна
-    body.classList.remove('active');
-  }
-});
-
-const cards = document.querySelectorAll(".attendees__item");
-cards.forEach((card) => {
-  card.addEventListener("click", (e) => {
-    let targetEl = e.target;
-    let targetCardText = card.querySelector(".attendees__item--text");
-    let targetCardImage = card.querySelector(".avatar__user");
-    document.querySelector(".attendees__item--text").textContent = targetCardText.textContent;
-    document.querySelector(".avatar__user").src = targetCardImage.src;
-  });
-});
+      console.log(body);
 
 
 
 
+      openPopupButtons.forEach((button) => { // Перебираем все кнопки
+         button.addEventListener('click', (e) => { // Для каждой вешаем обработчик событий на клик
+            e.preventDefault(); // Предотвращаем дефолтное поведение браузера
+            popupBg.classList.add('active'); // Добавляем класс 'active' для фона
+            popup.classList.add('active'); // И для самого окна
+            body.classList.add('active')
+         })
+      });
 
+      closePopupButton.addEventListener('click', () => { // Вешаем обработчик на крестик
+         popupBg.classList.remove('active'); // Убираем активный класс с фона
+         popup.classList.remove('active'); // И с окна
+         body.classList.remove('active');
+      });
 
+      document.addEventListener('click', (e) => { // Вешаем обработчик на весь документ
+         if (e.target === popupBg) { // Если цель клика - фот, то:
+            popupBg.classList.remove('active'); // Убираем активный класс с фона
+            popup.classList.remove('active'); // И с окна
+            body.classList.remove('active');
+         }
+      });
 
+      const cards = document.querySelectorAll(".attendees__item");
+      cards.forEach((card) => {
+         card.addEventListener("click", (e) => {
+            let targetEl = e.target;
+            let targetCardText = card.querySelector(".attendees__item--text");
+            let targetCardImage = card.querySelector(".avatar__user");
+            document.querySelector(".popup__text-username").textContent = targetCardText.textContent;
+            document.querySelector(".popup__image").src = targetCardImage.src;
+         });
+      });

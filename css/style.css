@@ -681,6 +681,9 @@ html {
 .chat__interactive--menu .chat__btn .icon__chat-svg {
   fill: #4E4F51;
 }
+.chat__interactive--menu .chat__btn .svg__chat--btn-attendees, .chat__interactive--menu .chat__btn .svg__chat--btn-live-chat {
+  margin-right: 8px;
+}
 .chat__interactive--menu .chat__btn-gear {
   width: 100%;
   max-width: 32px;
@@ -917,13 +920,14 @@ html {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-.chat__messenger--item--user.active .user__name {
-  font-size: 20px;
-  color: #FB554C;
-}
 .chat__messenger--item--user.active .user__text {
   font-size: 16px;
   color: #4E4F51;
+}
+
+.popup__text-username {
+  font-size: 30px;
+  color: #FB554C;
 }
 
 .attendees {
@@ -940,65 +944,80 @@ html {
   overflow-x: hidden;
   height: 420px;
 }
-.attendees.active .attendees__item {
+
+.attendees__item {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   max-width: 300px;
-  padding: 10px 0;
+  padding: 10px 10px 10px 20px;
+}
+.attendees__item--text {
+  margin-left: 30px;
 }
 
-.popup__bg {
+.popup__attendees-bg {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
-  opacity: 0;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
   pointer-events: none;
-  -webkit-transition: 0.5s all;
-  transition: 0.5s all;
-  overflow: auto;
+  -webkit-transition: all 0.3;
+  transition: all 0.3;
 }
 
-.popup__bg.active {
+.popup__attendees-bg.active {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: all 0.3;
+  transition: all 0.3;
   width: 100%;
   height: 100vh;
   opacity: 1;
   pointer-events: all;
   -webkit-transition: 0.5s all;
   transition: 0.5s all;
-  background-color: rgb(30, 255, 0);
-  overflow: auto;
 }
 
 body.active {
   overflow: hidden;
 }
 
-.popup {
+.popup__attendees {
   position: fixed;
-  top: 50%;
+  top: 5%;
   left: 50%;
-  background-color: red;
-  -webkit-transform: translate(-50%, -50%) scale(0);
-          transform: translate(-50%, -50%) scale(0);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background: #fff;
   overflow: auto;
-  padding: 25px;
-  -webkit-transition: 0.5s all;
-  transition: 0.5s all;
+  padding: 25px 15px;
 }
 
-.popup.active {
+.popup__attendees.active {
   overflow: auto;
-  background-color: rgb(0, 0, 0);
-  -webkit-transform: translate(-50%, -50%) scale(1);
-          transform: translate(-50%, -50%) scale(1);
+  background-color: #4E4F51;
+  overflow: hidden;
+  width: 100%;
   -webkit-transition: 0.5s all;
   transition: 0.5s all;
 }
@@ -1009,6 +1028,113 @@ body.active {
   right: 10px;
   cursor: pointer;
   font-size: 40px;
+}
+
+.popup__content {
+  margin: 35px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 350px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.popup__content .popup__text {
+  color: #EEF1EC;
+  font-size: 25px;
+  font-family: "GeneralSans";
+}
+.popup__content .popup__image {
+  width: 100px;
+  height: 100px;
+}
+.popup__content .notification__text {
+  font-family: "GeneralSans";
+  color: #FB554C;
+  font-size: 30px;
+}
+.popup__content .popup__chat-icon {
+  width: 30px;
+  height: 30px;
+}
+.popup__content .popup__content-btn {
+  background-color: #8DBAB5;
+  color: #EEF1EC;
+  font-size: 35px;
+  padding: 10px 35px;
+}
+
+.text__online {
+  font-size: 30px;
+  font-family: "GeneralSans";
+  color: #F4BB44;
+  margin-left: 10px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 56px;
+  height: 25px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  display: none;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 30px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  background-color: #323334;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 36px;
+  width: 36px;
+  left: 0px;
+  bottom: -5px;
+  border-radius: 50%;
+  background-color: #FB554C;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #8DBAB5;
+}
+
+input:focus + .slider {
+  -webkit-box-shadow: 0 0 1px red;
+          box-shadow: 0 0 1px red;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
 
 @media (max-width: 1180px) {
@@ -1163,6 +1289,50 @@ body.active {
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
   }
+  .popup__content {
+    margin: 15px 0;
+  }
+  .popup__content .popup__text {
+    font-size: 15px;
+  }
+  .popup__content .popup__image {
+    width: 80px;
+    height: 80px;
+  }
+  .popup__content .notification__text {
+    font-size: 20px;
+  }
+  .popup__content .popup__chat-icon {
+    width: 25px;
+    height: 25px;
+  }
+  .popup__content .popup__content-btn {
+    font-size: 15px;
+    padding: 10px 20px;
+  }
+  .popup__attendees {
+    left: 0;
+  }
+  .switch {
+    width: 46px;
+    height: 15px;
+  }
+  .slider:before {
+    height: 26px;
+    width: 26px;
+  }
+  .popup__content-user {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .popup__text-username {
+    margin-left: 20px;
+    font-size: 25px;
+  }
 }
 @media (max-width: 840px) {
   .hero__btn {
@@ -1240,5 +1410,42 @@ body.active {
 @media (max-width: 480px) {
   h1 {
     font-size: 40px;
+  }
+  .popup__text-username {
+    margin-left: 0px;
+    font-size: 15px;
+  }
+  .popup__content .popup__text {
+    font-size: 15px;
+  }
+  .popup__content .notification__text {
+    font-size: 12px;
+  }
+  .popup__content .popup__chat-icon {
+    width: 25px;
+    height: 25px;
+  }
+  .popup__content .popup__content-btn {
+    font-size: 12px;
+  }
+  .popup__content {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
+  .popup__content > a {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin: 10px 20px 0 0;
+  }
+  .popup__content > img {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin: 10px 20px 0 0;
+  }
+  .switch {
+    margin-left: 10px;
   }
 }
