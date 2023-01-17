@@ -68,6 +68,11 @@ console.log(chatAttendees);
 
 let chat = document.querySelector('.chat__messenger');
 console.log(chat);
+let newUserChat = document.querySelector('.chat__messenger--item--user');
+let userChat = [...document.querySelectorAll('.chat__messenger--item')];
+console.log(userChat)
+// let userChat = document.querySelectorAll('.chat__messenger--item');
+
 
 liveChatBtn.addEventListener("click", () => {
   chatAttendees.classList.remove('active');
@@ -78,12 +83,13 @@ attendeesChatBtn.addEventListener("click", () => {
   chatAttendees.classList.add('active');
   chat.classList.remove('active');
   chat.classList.add('noactive');
+  userChat.forEach((userChat) => { 
+  
+  
+  });
 })
 
 
-let newUserChat = document.querySelector('.chat__messenger--item--user');
-
-let userChat = document.querySelector('.chat__messenger--item');
 
 
 
@@ -168,11 +174,7 @@ function myClick() {
          })
       });
 
-      closePopupButton.addEventListener('click', () => { // Вешаем обработчик на крестик
-         popupBg.classList.remove('active'); // Убираем активный класс с фона
-         popup.classList.remove('active'); // И с окна
-         body.classList.remove('active');
-      });
+     
 
       document.addEventListener('click', (e) => { // Вешаем обработчик на весь документ
          if (e.target === popupBg) { // Если цель клика - фот, то:
@@ -192,3 +194,27 @@ function myClick() {
             document.querySelector(".popup__image").src = targetCardImage.src;
          });
       });
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      breakpoints: {
+       
+        840: {
+          slidesPerView: 2,
+          spaceBetween: 40,
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        },
+       
+    },
+ 
+      
+      
+      })
+      

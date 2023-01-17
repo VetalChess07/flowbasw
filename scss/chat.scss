@@ -117,6 +117,7 @@ overflow-x: hidden;
 
 
 
+
 .chat__messenger::-webkit-scrollbar {
   display: none;
   opacity: 0;
@@ -131,6 +132,7 @@ overflow-x: hidden;
    align-items: center;
 transform: translateX(-150%);
 animation-iteration-count: 1;
+
 
 &:nth-child(1) {animation: ani 0.3s ease-in-out forwards;
 animation-iteration-count: 1;}
@@ -246,8 +248,56 @@ border-radius: 99px;
 .chat__airplane-img {
    
 }
+.chat__item--text {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   margin-top: 42px;
+   
+   &-content {
+   width: 100%;
+   max-width: 350px;
+   padding: 32px;
+}
+&--text {
+   margin: 32px 0 8px 0;
+   font-family: 'GeneralSans';
+}
+
+&--get-started{
+background: #F5F4F3;
+border-radius: 24px;
+max-width: 400px;}
+.chat__item--text--btn {
+   @extend %btn;
+   margin-top: 82px;
+}
+.chat__btn--compass {
+   @extend %btn__white;
+  margin-left: 5px;
+  margin-top: 82px;
+  padding: 8px 24px 8px 8px;
+  position: relative;
+  .svg__chat--compass{
+   margin: 0 6px -3px 5px;;
+  }
+}
+&--btn:hover {
+   @extend %btn__hover;
+}
+.chat__btn--compass:hover {
+   @extend %btn__white__hover;
+   .path__chat--compass{
+      fill: $white;
+      }
+}
+
 
 }
+
+
+}
+
 .chat__messenger--item--user{
    display: none;
 }
@@ -467,4 +517,5 @@ overflow: hidden;
  .slider.round:before {
    border-radius: 50%;
  }
+
 
