@@ -216,5 +216,24 @@ function myClick() {
  
       
       
-      })
+      });
+
+      let swiperRunning = new Swiper('.swiper__running', {
+        loop: true,
+        slidesPerView: "auto",
+        spaceBetween: 40,
+        autoplay: {
+          delay: 2500,
+        },
+
+        
+       });
+       let swiperRunningDoun = new Swiper('.swiper__running--doun', {
+        loop: true,
+        slidesPerView: "auto",
+        spaceBetween: 40,
+        autoplay: {
+          delay: 2000,
+        },
+       });
       

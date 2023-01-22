@@ -205,7 +205,34 @@ background-color: $black;
    margin-left:20px;
    font-size: 25px;
  }
+ .cards {
+  
+   flex-direction: column;
+   .card {
+      width: 100%;
+      max-width: none;
+      padding: 10px;
+      .card__image {
+         margin-bottom: 0px;
+      }
+   }
  
+}
+.features {
+   
+ .features__inner {
+   
+   .features__item {
+   
+}
+.features__item--text{
+   padding: 0;
+}
+.features__item--img{
+   padding: 0 ;
+}
+}
+}
 }
 
 @media (max-width:840px){

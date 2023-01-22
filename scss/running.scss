@@ -7,6 +7,7 @@
    width: 100%;
    max-width: 1440px;
    margin: 0 auto;
+  
 
 &__inner {
    display: flex;
@@ -14,16 +15,20 @@
    align-items: flex-start;
    justify-content: space-around;
    overflow: hidden;
+   box-sizing: content-box;
+ display: inline-flex;
+
  
-  
+ 
 .running__item {
    width: 100%;
    min-width: 400px;
-   animation: marquee 10s infinite linear;
+   animation: ticker 20s infinite linear;
 height: 100%;
+
 padding: 32px;
 border-radius: 32px;
-display: flex;
+display: inline-flex;
 flex-direction: column;
 background-color: $white;
    .running__title {
@@ -95,6 +100,11 @@ margin-bottom: 40px;
 }
 }
 }
+.running__inner--down{
 
+.running__item {
+   animation: tickerDoun 20s infinite linear !important;
+}
+}
 
 

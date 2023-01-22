@@ -1,9 +1,22 @@
-@keyframes marquee{
+@keyframes ticker{
    0% {
-       transform: translateZ(0)
-   }
-
-   100% {
-       transform: translate3d(-100%, 0 , 0)
-   }
+      transform: translateX(200%)   }
+      50% {
+         transform: translateX(-240%)
+     }   
+     100% {
+      transform: translateX(200%)
+  }   
+   
+}
+@keyframes tickerDoun{
+   0% {
+      transform: translateX(-200%)   }
+      50% {
+         transform: translateX(240%)
+     }   
+     100% {
+      transform: translateX(-200%)
+  }   
+   
 }

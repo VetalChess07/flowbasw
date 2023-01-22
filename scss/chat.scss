@@ -252,7 +252,7 @@ border-radius: 99px;
    width: 100%;
    display: flex;
    justify-content: space-between;
-   margin-top: 42px;
+   padding: 48px 0 80px 0;
    
    &-content {
    width: 100%;
@@ -267,10 +267,13 @@ border-radius: 99px;
 &--get-started{
 background: #F5F4F3;
 border-radius: 24px;
-max-width: 400px;}
+
+
+}
 .chat__item--text--btn {
    @extend %btn;
    margin-top: 82px;
+   border: 1px solid $black;
 }
 .chat__btn--compass {
    @extend %btn__white;
@@ -283,7 +286,11 @@ max-width: 400px;}
   }
 }
 &--btn:hover {
+   // padding: 1px 24px;
    @extend %btn__hover;
+   // border: 1px solid transparent;
+  
+  
 }
 .chat__btn--compass:hover {
    @extend %btn__white__hover;

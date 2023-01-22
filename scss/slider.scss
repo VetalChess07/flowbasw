@@ -17,6 +17,7 @@
     }
     .swiper-button-next,.swiper-button-prev {
       position: static;
+      z-index: 1;
    }
    .swiper-button-next::after,.swiper-button-prev::after {
       content: "";
@@ -62,14 +63,6 @@
     border-radius: 50% ;
    background-color: $black;
    }
-   // .swiper-button-next::after {
-   //    content: "";
-   //    position: relative;
-   //    width: 9px;
-   //    height: 15px;
-   //   border: 2px solid $white;
-   
-   // }
     .swiper-slide {
    padding: 32px;
       width: 400px !important;
@@ -166,16 +159,11 @@
          }
         
    }
-   .swiper-button-prev {
-   }
    .swiper-button-next {
       margin-left: 15px;
    }
    }
    
    }
-   
-   
-    
-
 }
+
