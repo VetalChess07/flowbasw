@@ -236,4 +236,16 @@ function myClick() {
           delay: 2000,
         },
        });
-      
+       let airpaleSvg = document.querySelector(".airplane__svg--path") ;
+       const inputs = document.querySelectorAll(".input");
+inputs.forEach((input) => {
+
+  input.addEventListener("input", () => {
+    if (Array.from(inputs).every((v) => v.value) == true) {
+      document.querySelector(".form__button").classList.add("_active");
+     airpaleSvg.classList.add("active");
+    } else {
+      airpaleSvg.classList.add("active");
+    }
+  });
+});

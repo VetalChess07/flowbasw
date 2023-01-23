@@ -55,6 +55,17 @@ display: flex;
    flex-direction: column;
    align-items: flex-start;
    position: relative;
+&--user{
+   
+   display: flex;
+   justify-content: space-between;
+   flex-direction: column;
+   .hero__user--img{
+      width: 48px;
+      height: 48px;
+      margin-bottom: 8px;
+   }
+}
    
 &--title {
 }
@@ -105,6 +116,7 @@ color: #4E4F51;
   
 border-radius: 50%;
 }
+
 .hero__new--text{
  
    font-family: 'Koulen';

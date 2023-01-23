@@ -835,38 +835,49 @@
     </div>
     
    </section>
-   <section class="section__subscribe">
+   <section class="section section__subscribe">
+    <div class="wrap wrap__subscribe">
     <div class="subscribe">
       <div class="subscribe__inner">
         <div class="subscribe__item">
-            <h2></h2>
-            <p>
-              <svg class="subscribe__item--svg" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="32" height="32" rx="8" fill="#F5F4F3"/>
-                <path d="M21.3333 16.0047C21.3333 16.4936 21.7333 16.8936 22.2222 16.8936H24C24.4889 16.8936 24.8889 16.4936 24.8889 16.0047C24.8889 15.5158 24.4889 15.1158 24 15.1158H22.2222C21.7333 15.1158 21.3333 15.5158 21.3333 16.0047Z" fill="#323334"/>
-                <path d="M20.08 20.2892C19.7867 20.6803 19.8667 21.2225 20.2578 21.5069C20.7289 21.8536 21.2267 22.2269 21.6978 22.5825C22.0889 22.8758 22.64 22.7958 22.9244 22.4047C22.9244 22.3958 22.9333 22.3958 22.9333 22.3869C23.2267 21.9958 23.1467 21.4447 22.7556 21.1603C22.2844 20.8047 21.7867 20.4314 21.3244 20.0847C20.9333 19.7914 20.3822 19.8803 20.0889 20.2714C20.0889 20.2803 20.08 20.2892 20.08 20.2892Z" fill="#323334"/>
-                <path d="M22.9422 9.61359C22.9422 9.60471 22.9333 9.60471 22.9333 9.59582C22.64 9.20471 22.0889 9.12471 21.7067 9.41804C21.2356 9.77359 20.7289 10.1469 20.2667 10.5025C19.8756 10.7958 19.8044 11.3469 20.0978 11.7292C20.0978 11.738 20.1067 11.738 20.1067 11.7469C20.4 12.138 20.9422 12.218 21.3333 11.9247C21.8044 11.578 22.3022 11.1958 22.7733 10.8403C23.1556 10.5558 23.2267 10.0047 22.9422 9.61359Z" fill="#323334"/>
-                <path d="M12.4444 13.338H8.88889C7.91111 13.338 7.11111 14.138 7.11111 15.1158V16.8936C7.11111 17.8714 7.91111 18.6714 8.88889 18.6714H9.77778V21.338C9.77778 21.8269 10.1778 22.2269 10.6667 22.2269C11.1556 22.2269 11.5556 21.8269 11.5556 21.338V18.6714H12.4444L16.8889 21.338V10.6714L12.4444 13.338Z" fill="#323334"/>
-                <path d="M19.1111 16.0047C19.1111 14.8225 18.5956 13.7558 17.7778 13.0269V18.9736C18.5956 18.2536 19.1111 17.1869 19.1111 16.0047Z" fill="#323334"/>
-                </svg>
+            <h2 class="subscribe__item--title">subscribe <br> <span class="span__title">our newsletter</span></h2>
+            <p class="subscribe__item--text">
               Get the latest free event conference notification and a reminder of upcoming speakers.</p>
         </div>
-        <div class="subscribe__item">
-          <input class="popup__input input" placeholder="Имя" type="text">
-         <input class="popup__input input" placeholder="E-mail" type="email">
-         <input class="popup__input input" placeholder="Телефон" type="tel">
-         <input class="popup__input input" placeholder="ФШР или FIDE ID" type="text">
-         <input class="popup__input input" placeholder="ник на lichess.org" type="text">
-         <label  class="popup__label" for="checkbox">
-            <input class="popup__checkbox input" id="checkbox"  type="checkbox">
+        <div class="subscribe__item subscribe__item--input">
+         <input class="subscribe__input input" placeholder="Your email address" type="tel">
+         <label  class="subscribe__label" for="checkbox">
+         <input class="subscribe__checkbox input" id="checkbox"  type="checkbox">
             <span class="checkbox-style"></span>
-             Я принимаю <span class="popup__span"><a class="popup__link" href="">
-               политику конфиденциальности
-            </a></span > 
+             <a class="subscribe__link" href="">
+              I agree with <u>Privacy Policy</u>  and
+<u>Terms of Conditions</u> 
+            </a>
          </label>
-            <input value="Join waitlist" class="form__button" placeholder="Join waitlist" type="button">
+         <div class="form__button--box">
+           <input value="Subscribe" class="form__button" placeholder="Subscribe" type="button">
+            <svg class="form__button--svg airplane__svg" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="airplane__svg--path" d="M0.83562 9.20001L9.56062 5.46001C9.96562 5.28501 9.96562 4.71501 9.56062 4.54001L0.83562 0.800008C0.50562 0.655008 0.14062 0.900009 0.14062 1.25501L0.13562 3.56001C0.13562 3.81001 0.32062 4.02501 0.57062 4.05501L7.63562 5.00001L0.57062 5.94001C0.32062 5.97501 0.13562 6.19001 0.13562 6.44001L0.14062 8.74501C0.14062 9.10001 0.50562 9.34501 0.83562 9.20001Z" fill="white"/>
+            </svg>
+         </div>
+           
         </div>
+        <div class="subscribe__item">
+          <h2 class="subscribe__item--title">subscribe <br> <span class="span__title">our newsletter</span></h2>
+          <div class="subscribe__item--container">
+            <a class="subscribe__item--container-btn" href="#"><svg class="subscribe__krest--svg" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="subscribe__krest--path" d="M8.99998 5.66667H5.66665V9C5.66665 9.36667 5.36665 9.66667 4.99998 9.66667C4.63331 9.66667 4.33331 9.36667 4.33331 9V5.66667H0.99998C0.633313 5.66667 0.333313 5.36667 0.333313 5C0.333313 4.63333 0.633313 4.33333 0.99998 4.33333H4.33331V0.999999C4.33331 0.633332 4.63331 0.333332 4.99998 0.333332C5.36665 0.333332 5.66665 0.633332 5.66665 0.999999V4.33333H8.99998C9.36665 4.33333 9.66665 4.63333 9.66665 5C9.66665 5.36667 9.36665 5.66667 8.99998 5.66667Z" fill="#000"/>
+              </svg>
+              New event</a>
+            <p class="subscribe__item--container-text">Get the latest <span class="span__text"> free </span> event conference notification and a reminder of upcoming speakers.</p>
+          </div>
       </div>
+      <div class="subscribe__item subscribe__item--img">
+        <img src="img/subscribe__img.png" alt="#" class="subscribe__img">
+         
+      </div>
+      </div>
+    </div>
     </div>
    </section>
    
