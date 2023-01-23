@@ -87,6 +87,9 @@ white-space: nowrap;
    @extend %btn;
 text-align: right;
 position: relative;
+&:hover{
+   color: $white;
+}
 &::before{
    content: url(../img/krest.svg);
    position: absolute;
@@ -107,4 +110,7 @@ transition: all ease 0.3s;
    position: absolute;
    right: -200%;
    transition: all ease 0.3s;
+}
+.burger__btn {
+   display: none;
 }

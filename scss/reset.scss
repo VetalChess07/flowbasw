@@ -71,6 +71,7 @@ a {
    cursor: pointer;
    color: #000000;
    transition: all 0.3s;
+   display: inline-block;
 }
 a:hover {
    color: $crayola;
@@ -120,6 +121,15 @@ font-size: 40px;
 line-height: 42px;
 letter-spacing: -0.02em;
 color: #000000;
+}
+h5{
+   font-family: 'Koulen';
+   font-style: normal;
+   font-weight: 400;
+   font-size: 64px;
+   line-height: 60px;
+   letter-spacing: -0.02em;
+   color: $black; 
 }
 button{
    border: none;

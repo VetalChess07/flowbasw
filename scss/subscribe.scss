@@ -1,0 +1,81 @@
+.popup__input{
+   outline: none;
+   border: 2px solid #EBEAEC;
+   border-radius: 13px;
+   font-size: 18px;
+   line-height: 21px;
+   padding: 10px 0 10px 17px;
+   color: #3D3745 ;
+   margin: 10px 0;
+   }
+   
+   
+   .popup__input::placeholder{
+      color: #B1AFB5;
+   }
+   
+   .popup__input:focus{
+      border: 2px solid #B1AFB5;
+      border-radius: 13px;
+   color: #3D3745;
+   }
+   
+   .popup__label{
+      font-size: 18px;
+      line-height: 21px;
+      color: #3D3745;
+      margin-left: 20px;
+      margin: 0 0 10px 30px;
+   }
+   .popup__link{
+      color:#5C6BD7;
+      text-decoration: underline;
+   }
+   .popup__checkbox{
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      padding-left: 22px;
+   }
+   .checkbox-style{
+      width: 16px;
+      height: 16px;
+     position: absolute;
+     border-radius: 50%;
+      border: 2px solid rebeccapurple;
+      margin-left: -22px;
+   }
+   .popup__checkbox:checked + .checkbox-style::before{
+   content: "";
+   width: 8px; height: 8px;
+   background-color: rebeccapurple;
+   border-radius: 50%;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50% , -50%);
+   }
+   .popup__checkbox:focus + .checkbox-style{
+   box-shadow: 0 0 0 2px #000;
+   }
+   .form__button{
+      width: 100%;
+      max-width: 220px;
+      padding: 9px 0 11px 0;
+    margin: 0 auto;
+   background: #B1AFB5;
+   border-radius: 13px;
+   font-size: 24px;
+   line-height: 27px;
+   text-transform: uppercase;
+   color: #FBFBFB;
+   font-weight: 500;
+   border: none;
+   }
+   
+   .form__button._active{
+      background: #5C6BD7;
+   }
+   

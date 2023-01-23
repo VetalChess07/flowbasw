@@ -1,0 +1,72 @@
+
+.section__about-us {
+}
+
+.about-us {
+   margin: 122px 0;
+}
+.about-us__inner {
+width: 100%;
+height: 100%;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+   .about-us__item {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .about-us__content {
+         .about-us__content--text {
+            margin: 32px 0;
+            width: 100%;
+            max-width: 524px;
+         }
+         .about-us__content--link {
+            @extend %btn__white;
+         &:hover{
+            @extend %btn__white__hover;
+            &,.about-us__content--path{
+               fill: $white;
+            }
+                  }
+         }
+         .about-us__content--svg { position: relative;
+            right: 5px;
+            top: 2px;
+         }
+        
+         .about-us__content--img {
+            width: 100%;
+            max-width: 500px;
+            height: 320px;
+            object-fit: contain;
+         }
+
+}
+}
+.about-us__item:nth-child(2){
+   margin: 188px 0;
+}
+
+   .about-us__content--link-dark {
+      @extend %btn;
+      border: 1px solid transparent;
+   &:hover{
+      @extend %btn__hover;
+      border: 1px solid $black;
+      &,.about-us__content--path-dark{
+         fill: $black;
+         
+      }
+            }
+            .about-us__content--path-dark{
+               fill: $white;
+            }
+         }
+
+}
+
+
+
